@@ -1,0 +1,27 @@
+{
+    "name": "relatedbits/flurry-reporting",
+    "type": "library",
+    "description": "Flurry Analytics Reporting API Client",
+    "keywords": ["Flurry", "Analytics", "Client", "API"],
+    "homepage": "https://github.com/marcell-ferenc/flurry-reporting",
+    "time": "2017-03-13",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcell Ferenc",
+            "email": "marcell.ferenc@relatedbits.com",
+            "homepage": "https://marcellferenc.com"
+        }
+    ],
+    "require": {
+        "php" : ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "RelatedBits\\Flurry\\": "src"
+        }
+    },
+    "require-dev": {
+        "php" : ">=5.6"
+    }
+}
