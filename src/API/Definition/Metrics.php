@@ -303,8 +303,17 @@ class Metrics extends Constants
     */
     public static function testDimensions($value, $table)
     {
-        $out = explode(',', $value);
-        $out = array_values(array_intersect($out, self::ACCEPTED_TABLE_PARAMETERS[$table]['dimensions']));
+        $out = [];
+        $input = explode(',', $value);
+        foreach ($input as $dim) {
+            $dimName = str_replace(';show=all', '', $dim);
+            if (!in_array($dimName, self::ACCEPTED_TABLE_PARAMETERS[$table]['dimensions'])) {
+                continue;
+            }
+            if (preg_match('#^[a-z0-9].*(;show=all)?$#', $dim, $match)) {
+                $out[] = $dim;
+            }
+        }
         if (count($out) === 0) {
             throw new \InvalidArgumentException('Invalid dimensions: ' . $value);
         }
