@@ -55,7 +55,7 @@ $flurry = new Flurry($token);
 
 ## Exceptions
 
-If required parameters for the API are not provided it will trhow LogicException.
+If required parameters for the API are not provided it will throw LogicException.
 In case of invalid parameter values are provided InvalidArgumentException will be thrown if there is no default value defined in the library. Invalid parameter names are simply omitted.
 
 ## Author
